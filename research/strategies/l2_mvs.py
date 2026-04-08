@@ -166,7 +166,7 @@ def evaluate_l2_signal(
         # For RANDOM mode, use close as the "ema" anchor for stop calc
         stop = close_price - params.stop_atr_multiplier * atr14
         target = close_price + params.target_atr_multiplier * atr14
-        return _signal(close_price, stop, target, ema21=float("nan"), atr=atr14)
+        return _signal(close_price, stop, target, ema=float("nan"), atr=atr14)
 
     # ---------- All other modes: require valid EMA and ATR ----------
     if _is_nan(ema21) or _is_nan(atr14) or atr14 <= 0:
